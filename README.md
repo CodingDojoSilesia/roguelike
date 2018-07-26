@@ -122,3 +122,10 @@ All of the above should fill your time during a Coding Dojo. But if you want mor
 - colour the board! make floor different in enclosed spaces, The Hero and monsters with a special status can stand out better without any prompts
 - experience system for killing monsters
 - more and more levels to go through!
+
+## How to run
+1. Install [NodeJS](https://nodejs.org/en/download/)
+1. Install [NPM](https://www.npmjs.com/get-npm)
+1. `npm install`
+1. `nodejs src/index.js`
+1. Run tests with: `npm test`
