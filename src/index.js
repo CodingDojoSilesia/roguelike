@@ -14,17 +14,23 @@ let Player = class {
     constructor(board, hp = 20) {
         this.hp = hp;
         this.board = board;
-        this.location = undefined;
+        this.location = this.board.addPawn(this);
         this.symbol = "P";
     }
 
-    drop() {
-        this.location = this.board.addPawn(this);
+    up() {
+        this.location = this.board.up(this.location);
+    }
+    down() {
+        this.location = this.board.down(this.location);
+    }
+    left() {
+        this.location = this.board.left(this.location);
+    }
+    right() {
+        this.location = this.board.right(this.location);
     }
 
-    up() {
-        this.board.up(this.location);
-    }
 };
 
 const player = new Player(Board);
@@ -33,12 +39,19 @@ rl.on('line', (line) => {
     switch (line.trim()) {
         case "up":
             player.up();
+            Board.write();
             break;
         case "down":
+            player.down();
+            Board.write();
             break;
         case "left":
+            player.left();
+            Board.write();
             break;
         case "right":
+            player.right();
+            Board.write();
             break;
             // TODO: hero actions go here
             // player will keep his position
@@ -61,6 +74,5 @@ rl.on('line', (line) => {
 
 Board.init();
 // add monsters
-player.drop()
 Board.write();
 rl.prompt();
