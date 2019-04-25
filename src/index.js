@@ -9,13 +9,12 @@ const rl = readline.createInterface({
     prompt: '> '
 });
 
-
-let Player = class {
-    constructor(board, hp = 20) {
+let Pawn = class {
+    constructor(board, hp, symbol) {
         this.hp = hp;
         this.board = board;
         this.location = this.board.addPawn(this);
-        this.symbol = "P";
+        this.symbol = symbol;
     }
 
     up() {
@@ -30,10 +29,29 @@ let Player = class {
     right() {
         this.location = this.board.right(this.location);
     }
+};
 
+let Player = class extends Pawn {
+    constructor(board) {
+        super(board, 10, "P");
+    }
+};
+
+let Snake = class extends Pawn {
+    constructor(board) {
+        super(board, 2, "S");
+    }
+};
+
+let Dragon = class extends Pawn {
+    constructor(board) {
+        super(board, 25, "D");
+    }
 };
 
 const player = new Player(Board);
+const dragon = new Dragon(Board);
+const snake = new Snake(Board);
 
 rl.on('line', (line) => {
     switch (line.trim()) {
@@ -53,14 +71,8 @@ rl.on('line', (line) => {
             player.right();
             Board.write();
             break;
-            // TODO: hero actions go here
-            // player will keep his position
-            // when moved he will ask board for his new position
-            // board will keep monster positions, or references to objects and ask
-            // them for their positions, as player keeps it's own so should monsters
             // BOARD keeps a list of objects, dimensions and is only to
             // return/calculate new position
-            // if there is monster in hero's way action should be attack instead of move
         default:
             Board.write();
             console.log(`Your input was '${line.trim()}'`);
@@ -73,6 +85,5 @@ rl.on('line', (line) => {
 });
 
 Board.init();
-// add monsters
 Board.write();
 rl.prompt();
