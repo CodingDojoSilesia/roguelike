@@ -73,6 +73,12 @@ let right = function newLocationRight([i, j]) {
     return [i, newRight];
 };
 
+let movePawns = function moveAllPawns() {
+    pawns.forEach((p) => {
+        p.move();
+    });
+};
+
 module.exports = {
     board: board,
     init: init,
@@ -81,5 +87,6 @@ module.exports = {
     up: up,
     down: down,
     left: left,
-    right: right
+    right: right,
+    movePawns: movePawns
 };

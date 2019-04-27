@@ -29,11 +29,19 @@ let Pawn = class {
     right() {
         this.location = this.board.right(this.location);
     }
+    move() {
+        const moves = ["up", "down", "left", "right"];
+        let randomMove = moves[Math.floor(Math.random()*moves.length)];
+        this[randomMove]();
+    }
 };
 
 let Player = class extends Pawn {
     constructor(board) {
         super(board, 10, "P");
+    }
+    move() {
+        rl.prompt();
     }
 };
 
@@ -71,14 +79,12 @@ rl.on('line', (line) => {
             player.right();
             Board.write();
             break;
-            // BOARD keeps a list of objects, dimensions and is only to
-            // return/calculate new position
         default:
             Board.write();
             console.log(`Your input was '${line.trim()}'`);
             break;
     }
-    rl.prompt();
+    Board.movePawns();
 }).on('close', () => {
     console.log('Have a great day!');
     process.exit(0);
@@ -86,4 +92,3 @@ rl.on('line', (line) => {
 
 Board.init();
 Board.write();
-rl.prompt();
