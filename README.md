@@ -1,5 +1,7 @@
 # Rougelike Kata
 
+tl;dr [how to run](#how-to-run)
+
 The aim of this kata is to create a rougelike game.
 
 Games like that are played in the console on a board consisting of various elements.
@@ -125,7 +127,7 @@ All of the above should fill your time during a Coding Dojo. But if you want mor
 
 ## How to run
 1. Install [NodeJS](https://nodejs.org/en/download/)
-1. Install [NPM](https://www.npmjs.com/get-npm)
-1. `npm install`
-1. `nodejs src/index.js`
-1. Run tests with: `npm test`
+1. Install [yarn](https://yarnpkg.com/en/docs/install)
+1. `yarn install`
+1. `yarn run game`
+1. Run tests with: `yarn run test` or `yarn run test --watchAll`
