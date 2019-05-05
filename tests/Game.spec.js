@@ -1,6 +1,8 @@
 import Game from '../src/Game';
 
-test('Game constructor should fill the whole board with floor tiles', function() {
+// expect function https://jestjs.io/docs/en/expect
+
+test('Game constructor should fill the whole board with floor tiles', () => {
   const game = new Game();
   const board = game.board;
 
@@ -9,4 +11,10 @@ test('Game constructor should fill the whole board with floor tiles', function()
       expect(board[y][x]).toBe('.');
     }
   }
+});
+
+test('Game.draw() should be returns string', () => {
+  const game = new Game();
+  const output = game.draw();
+  expect(typeof output).toBe('string');
 });

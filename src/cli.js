@@ -10,16 +10,17 @@ export default class CLI {
     const trimedLine = line.trim();
     switch (trimedLine) {
       default:
-        this.game.draw();
+        this.log(this.game.draw());
         this.log(`Your input was '${trimedLine}'`);
         break;
     }
   }
 
   // Below methods are neccesary to run prompt in console
+  // plz don't edit because firemark will be angry
   run() {
     this.initRL();
-    this.game.draw();
+    this.log(this.game.draw());
     this.rl.prompt();
   }
 

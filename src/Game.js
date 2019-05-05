@@ -18,9 +18,10 @@ export default class Game {
   }
 
   draw() {
-    for (let i = 0; i < BOARD_HEIGHT; i++) {
-      console.log(this.board[i].join(''));
-    }
+    return this.board
+      .map((row) => row.join(''))  // transform each row to one line
+      .join('\n')  // join lines with new lines
+    ;
   }
 }
 
