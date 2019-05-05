@@ -2,6 +2,7 @@ import CLI from '../src/cli.js'
 
 // expect https://jestjs.io/docs/en/expect
 // mock https://jestjs.io/docs/en/mock-functions#using-a-mock-function
+// mock+expect https://jestjs.io/docs/en/expect#tohavebeencalled
 
 test('CLI constructor should be save game object', () => {
   const game = jest.fn();

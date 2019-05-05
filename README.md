@@ -127,7 +127,15 @@ All of the above should fill your time during a Coding Dojo. But if you want mor
 
 ## How to run
 1. Install [NodeJS](https://nodejs.org/en/download/)
-1. Install [yarn](https://yarnpkg.com/en/docs/install)
-1. `yarn install`
-1. `yarn run game`
-1. Run tests with: `yarn run test` or `yarn run test --watchAll`
+2. Install [yarn](https://yarnpkg.com/en/docs/install)
+3. `yarn install`
+4. `yarn run game`
+5. Run tests with: `yarn run test` or `yarn run test --watchAll`
+
+
+## Protips
+
+1. Don't mix CLI with Game (srsly, big class of everything is not a good idea).
+2. Tests of CLI and Game should be separable too.
+3. Would be nice to modify size of board in tests.
+4. Board filled with a chars is not a smart idea - try to using OOP or Enum.
