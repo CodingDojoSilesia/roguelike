@@ -138,4 +138,4 @@ All of the above should fill your time during a Coding Dojo. But if you want mor
 1. Don't mix CLI with Game (srsly, big class of everything is not a good idea).
 2. Tests of CLI and Game should be separable too.
 3. Would be nice to modify size of board in tests.
-4. Board filled with a chars is not a smart idea - try to using OOP or Enum.
+4. Board filled with chars is not a smart idea - try to using OOP or Enum.
