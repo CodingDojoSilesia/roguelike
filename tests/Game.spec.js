@@ -13,7 +13,7 @@ test('Game constructor should fill the whole board with floor tiles', () => {
   }
 });
 
-test('Game.draw() should be returns string', () => {
+test('Game.draw() should return string', () => {
   const game = new Game();
   const output = game.draw();
   expect(typeof output).toBe('string');
