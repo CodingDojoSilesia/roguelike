@@ -4,13 +4,13 @@ import CLI from '../src/cli.js'
 // mock https://jestjs.io/docs/en/mock-functions#using-a-mock-function
 // mock+expect https://jestjs.io/docs/en/expect#tohavebeencalled
 
-test('CLI constructor should be save game object', () => {
+test('CLI constructor should save game object', () => {
   const game = jest.fn();
   const cli = new CLI(game);
   expect(cli.game).toBe(game);
 });
 
-test('CLI.parseLine should be on default show board', () => {
+test('CLI.parseLine on default should show board', () => {
   const game = jest.fn();
   game.draw = jest.fn(() => '<board>');
   const cli = new CLI(game);
